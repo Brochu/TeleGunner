@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour {
 
     // Constant used to check if input axis close to 0
     private bool updating = true;
-    private float mousex = 0.0f;
-    private float mousey = 0.0f;
 
     private const float EPSILON = 0.0001f;
 
@@ -50,11 +48,11 @@ public class PlayerController : MonoBehaviour {
 
     private Quaternion getPlayerDesiredLookDirection()
     {
-         return Quaternion.AngleAxis(Input.GetAxis("Mouse X"), transform.up);
+         return Quaternion.AngleAxis(Input.GetAxis("Mouse X") * BasicConfig.mouseSensitivity, transform.up);
     }
 
     private Quaternion getPlayerDesiredLookPitch()
     {
-        return Quaternion.AngleAxis(Input.GetAxis("Mouse Y"), Vector3.left);
+        return Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * BasicConfig.mouseSensitivity, Vector3.left);
     }
 }
