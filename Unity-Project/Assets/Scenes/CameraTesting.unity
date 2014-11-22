@@ -152,7 +152,7 @@ GameObject:
   - 124: {fileID: 765540911}
   - 81: {fileID: 765540910}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,6 +234,7 @@ GameObject:
   - 33: {fileID: 1255024506}
   - 136: {fileID: 1255024505}
   - 23: {fileID: 1255024504}
+  - 114: {fileID: 1255024507}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -248,7 +249,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255024502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 395.968811, y: 1, z: 143.271362}
+  m_LocalPosition: {x: 401.720001, y: 1, z: 140.100006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 765540914}
@@ -294,6 +295,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255024502}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1255024507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255024502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b46595ed4c734095af5418acf80ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCam: {fileID: 765540913}
 --- !u!1 &1709588949
 GameObject:
   m_ObjectHideFlags: 0
