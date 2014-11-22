@@ -3,20 +3,34 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    public Camera playerCam = null;
+
     // Constant used to check if input axis close to 0
+    private bool updating = true;
+    private float mousex = 0.0f;
+    private float mousey = 0.0f;
+
     private const float EPSILON = 0.0001f;
 
     // Use this for initialization
     void Start () {
-        // Get useful components
+
+        if (playerCam == null)
+        {
+            updating = false;
+            Debug.LogWarning("---- Player Camera property is not set for " + name + "! ----");
+        }
     }
     
     // Update is called once per frame
     void Update () {
 
-        // TODO: Get player presses and handle behaviour
-        transform.position += getPlayerDesiredMoveDirection();
-        transform.rotation = getPlayerDesiredLookDirection();
+        if (!updating)
+            return;
+
+        gameObject.transform.position += getPlayerDesiredMoveDirection();
+        gameObject.transform.rotation *= getPlayerDesiredLookDirection();
+        playerCam.gameObject.transform.rotation *= getPlayerDesiredLookPitch();
     }
 
     private Vector3 getPlayerDesiredMoveDirection()
@@ -36,6 +50,11 @@ public class PlayerController : MonoBehaviour {
 
     private Quaternion getPlayerDesiredLookDirection()
     {
-        return Quaternion.AngleAxis(0.0f, transform.forward);
+         return Quaternion.AngleAxis(Input.GetAxis("Mouse X"), transform.up);
+    }
+
+    private Quaternion getPlayerDesiredLookPitch()
+    {
+        return Quaternion.AngleAxis(Input.GetAxis("Mouse Y"), Vector3.left);
     }
 }
