@@ -209,3 +209,4 @@ Unity-Project/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+*.csproj
