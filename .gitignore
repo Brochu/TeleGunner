@@ -185,3 +185,5 @@ Unity-Project/Assets/UnityVS/
 Unity-Project/Temp/
 *.sln
 *.DotSettings
+Unity-Project/Library/ScriptAssemblies/Assembly-CSharp.dll
+Unity-Project/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
