@@ -4,10 +4,10 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public Camera playerCam = null;
+    public Gun gun = null;
 
     // Constant used to check if input axis close to 0
     private bool updating = true;
-
     private const float EPSILON = 0.0001f;
 
     // Use this for initialization

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98bea17791fa537499304dec34bb0d63, type: 3}
-  m_Name: GunData-BasicRifle
+  m_Name: GunData-BasicSMG
   m_EditorClassIdentifier: Assembly-CSharp::SOGunData
-  gunName: Basic Rifle
-  damage: 10
-  rateOfFire: 1
+  gunName: Basic SMG
+  damage: 5
+  rateOfFire: 2
