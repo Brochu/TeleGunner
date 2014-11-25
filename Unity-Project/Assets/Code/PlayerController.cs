@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum mouseButton
+{
+    LEFT,
+    RIGHT,
+    MIDDLE
+}
+
 public class PlayerController : MonoBehaviour {
 
     public Camera playerCam = null;
@@ -29,6 +36,11 @@ public class PlayerController : MonoBehaviour {
         gameObject.transform.position += getPlayerDesiredMoveDirection();
         gameObject.transform.rotation *= getPlayerDesiredLookDirection();
         playerCam.gameObject.transform.rotation *= getPlayerDesiredLookPitch();
+
+        if (wantsToShoot())
+        {
+            gun.shoot(playerCam.transform.forward);
+        }
     }
 
     private Vector3 getPlayerDesiredMoveDirection()
@@ -54,5 +66,10 @@ public class PlayerController : MonoBehaviour {
     private Quaternion getPlayerDesiredLookPitch()
     {
         return Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * BasicConfig.mouseSensitivity, Vector3.left);
+    }
+
+    private bool wantsToShoot()
+    {
+        return Input.GetMouseButton((int)mouseButton.LEFT);
     }
 }
