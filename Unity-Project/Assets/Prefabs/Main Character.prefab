@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 3352d049d39d16b449058dc31ed1a194, type: 2}
+  tempHitEffect: {fileID: 100000, guid: c82f220fcf3758049904e6a08b7e7451, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
